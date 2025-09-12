@@ -8,6 +8,9 @@ specmatic.jar
 specmatic_python.egg-info/*
 dist/*
 .venv
+venv
 build
 .vscode
 specmatic.egg-info
+.coverage
+Test-junit-jupiter.xml

@@ -21,7 +21,7 @@ class AvailableProductSchema(Schema):
         ProductType, required=False, by_value=True, load_default=None, allow_none=True
     )
     page_size = fields.Integer(
-        required=True, validate=validate.Range(min=0, error="pageSize must be positive")
+        required=True
     )
 
 
