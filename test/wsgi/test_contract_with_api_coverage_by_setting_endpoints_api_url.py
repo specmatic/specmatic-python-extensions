@@ -8,8 +8,8 @@ from test import (
     APP_PORT,
     FLASK_APP,
     ROOT_DIR,
-    STUB_HOST,
-    STUB_PORT,
+    MOCK_HOST,
+    MOCK_PORT,
     expectation_json_files,
 )
 
@@ -25,7 +25,7 @@ class TestContract:
 
 
 Specmatic().with_project_root(ROOT_DIR).with_mock(
-    STUB_HOST, STUB_PORT, expectation_json_files
+    MOCK_HOST, MOCK_PORT, expectation_json_files
 ).with_endpoints_api(
     coverage_server.endpoints_api,
 ).test(TestContract, APP_HOST, APP_PORT).run()

@@ -7,8 +7,8 @@ from test import (
     APP_PORT,
     FLASK_APP,
     ROOT_DIR,
-    STUB_HOST,
-    STUB_PORT,
+    MOCK_HOST,
+    MOCK_PORT,
     expectation_json_files,
 )
 from test.config import SPECMATIC_CONFIG_CUSTOM
@@ -21,7 +21,7 @@ class TestContract:
 os.environ["SPECMATIC_GENERATIVE_TESTS"] = "true"
 
 Specmatic().with_project_root(ROOT_DIR).with_specmatic_config_file_path(SPECMATIC_CONFIG_CUSTOM).with_mock(
-    STUB_HOST, STUB_PORT, expectation_json_files
+    MOCK_HOST, MOCK_PORT, expectation_json_files
 ).with_wsgi_app(
     FLASK_APP,
     APP_HOST,

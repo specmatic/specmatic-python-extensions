@@ -1,7 +1,7 @@
 import pytest
 
 from specmatic.core.specmatic import Specmatic
-from test import FLASK_APP, ROOT_DIR, STUB_HOST, STUB_PORT, expectation_json_files
+from test import FLASK_APP, ROOT_DIR, MOCK_HOST, MOCK_PORT, expectation_json_files
 
 
 class TestContract:
@@ -15,9 +15,9 @@ def set_app_config(app, host: str, port: int):
 
 
 def reset_app_config(app):
-    app.config["ORDER_API_HOST"] = STUB_HOST
-    app.config["ORDER_API_PORT"] = STUB_PORT
-    app.config["API_URL"] = f"http://{STUB_HOST}:{STUB_PORT}"
+    app.config["ORDER_API_HOST"] = MOCK_HOST
+    app.config["ORDER_API_PORT"] = MOCK_PORT
+    app.config["API_URL"] = f"http://{MOCK_HOST}:{MOCK_PORT}"
 
 
 Specmatic().with_project_root(ROOT_DIR).with_mock(

@@ -22,8 +22,8 @@ for file in pathlib.Path(ROOT_DIR, "test/data").iterdir():
 
 APP_HOST = "127.0.0.1"
 APP_PORT = 5000
-STUB_HOST = "127.0.0.1"
-STUB_PORT = 8080
+MOCK_HOST = "127.0.0.1"
+MOCK_PORT = 8080
 
 FASTAPI_APP = FASTAPI_APP
 SANIC_APP = SANIC_APP

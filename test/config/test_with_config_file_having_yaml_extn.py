@@ -7,8 +7,8 @@ from test import (
     APP_PORT,
     FLASK_APP,
     ROOT_DIR,
-    STUB_HOST,
-    STUB_PORT,
+    MOCK_HOST,
+    MOCK_PORT,
     expectation_json_files,
 )
 from test.config import SPECMATIC_CONFIG_JSON
@@ -22,7 +22,7 @@ os.environ["SPECMATIC_GENERATIVE_TESTS"] = "true"
 os.rename(SPECMATIC_CONFIG_JSON, SPECMATIC_CONFIG_JSON + ".bak")
 
 Specmatic().with_project_root(ROOT_DIR).with_mock(
-    STUB_HOST, STUB_PORT, expectation_json_files
+    MOCK_HOST, MOCK_PORT, expectation_json_files
 ).with_wsgi_app(
     FLASK_APP,
     APP_HOST,

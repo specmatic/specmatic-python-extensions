@@ -8,8 +8,8 @@ from test import (
     ROOT_DIR,
     FASTAPI_APP,
     FASTAPI_STR,
-    STUB_HOST,
-    STUB_PORT,
+    MOCK_HOST,
+    MOCK_PORT,
     expectation_json_files,
 )
 
@@ -21,7 +21,7 @@ class TestContract:
 
 
 Specmatic().with_project_root(ROOT_DIR).with_mock(
-    STUB_HOST, STUB_PORT, expectation_json_files
+    MOCK_HOST, MOCK_PORT, expectation_json_files
 ).with_asgi_app(FASTAPI_STR, APP_HOST, APP_PORT).test_with_api_coverage_for_fastapi_app(
     TestContract, FASTAPI_APP
 ).run()

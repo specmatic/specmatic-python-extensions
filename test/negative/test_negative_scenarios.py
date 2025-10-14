@@ -10,36 +10,36 @@ from test import RESOURCE_DIR, ROOT_DIR
 
 app_host = "127.0.0.1"
 app_port = 8000
-stub_host = "127.0.0.1"
-stub_port = 8080
+MOCK_HOST = "127.0.0.1"
+MOCK_PORT = 8080
 
 invalid_expectation_json_file = ROOT_DIR + "/test/data/invalid_expectation.json"
 
 
 class TestNegativeScenarios:
-    def test_should_be_able_to_parse_randomly_assigned_stub_port(self):
+    def test_should_be_able_to_parse_randomly_assigned_MOCK_PORT(self):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.bind(("localhost", 9000))
         try:
-            stub = SpecmaticMock("127.0.0.1", project_root=ROOT_DIR)
-            stub.stop()
+            mock = SpecmaticMock("127.0.0.1", project_root=ROOT_DIR)
+            mock.stop()
         finally:
             sock.close()
 
     def test_should_use_passed_port_even_if_final_logs_contradict_it(self):
-        stub = SpecmaticMock("127.0.0.1", 1234, project_root=ROOT_DIR)
+        mock = SpecmaticMock("127.0.0.1", 1234, project_root=ROOT_DIR)
         try:
-            assert stub.port == 1234
+            assert mock.port == 1234
         finally:
-            stub.stop()
+            mock.stop()
 
     def test_should_be_able_to_parse_port_when_base_url_has_postfix(self):
-        multi_stub_conf = RESOURCE_DIR / "multi_base_url.yaml"
-        stub = SpecmaticMock("127.0.0.1", specmatic_config_file_path=str(multi_stub_conf))
+        multi_mock_conf = RESOURCE_DIR / "multi_base_url.yaml"
+        mock = SpecmaticMock("127.0.0.1", specmatic_config_file_path=str(multi_mock_conf))
         try:
-            stub.stop()
+            mock.stop()
         finally:
-            assert stub.port == "9002"
+            assert mock.port == "9002"
 
     def test_should_use_the_default_http_or_https_port_when_no_port_is_specified(self):
         port = SpecmaticMock._extract_port("- http://localhost/api")
@@ -48,32 +48,32 @@ class TestNegativeScenarios:
         port = SpecmaticMock._extract_port("- https://localhost/api")
         assert port == "443"
 
-    def test_should_pick_first_port_when_multi_base_url_stub_is_used(self):
-        multi_stub_conf = RESOURCE_DIR / "multi_base_url_with_default.yaml"
-        stub = SpecmaticMock("127.0.0.1", specmatic_config_file_path=str(multi_stub_conf))
+    def test_should_pick_first_port_when_multi_base_url_mock_is_used(self):
+        multi_mock_conf = RESOURCE_DIR / "multi_base_url_with_default.yaml"
+        mock = SpecmaticMock("127.0.0.1", specmatic_config_file_path=str(multi_mock_conf))
         try:
-            stub.stop()
+            mock.stop()
         finally:
-            assert stub.port == "9000"
+            assert mock.port == "9000"
 
     def test_set_expectations_on_first_base_url_when_multi_port(self):
-        multi_stub_conf = RESOURCE_DIR / "multi_base_url_with_default.yaml"
+        multi_mock_conf = RESOURCE_DIR / "multi_base_url_with_default.yaml"
         example = f"{ROOT_DIR}/test/data/stub0.json"
-        stub = SpecmaticMock("127.0.0.1", specmatic_config_file_path=str(multi_stub_conf))
+        mock = SpecmaticMock("127.0.0.1", specmatic_config_file_path=str(multi_mock_conf))
         try:
-            stub.set_expectations([example])
+            mock.set_expectations([example])
         finally:
-            stub.stop()
+            mock.stop()
 
     def test_expectations_should_fail_when_invalid_port_is_specified(self):
-        multi_stub_conf = RESOURCE_DIR / "multi_base_url_with_default.yaml"
+        multi_mock_conf = RESOURCE_DIR / "multi_base_url_with_default.yaml"
         example = f"{ROOT_DIR}/test/data/stub0.json"
-        stub = SpecmaticMock("127.0.0.1", specmatic_config_file_path=str(multi_stub_conf))
+        mock = SpecmaticMock("127.0.0.1", specmatic_config_file_path=str(multi_mock_conf))
         with pytest.raises(Exception):
-            stub.set_expectations([example], 1234)
-        stub.stop()
+            mock.set_expectations([example], 1234)
+        mock.stop()
 
-    def test_throws_exception_and_shuts_down_stub_when_stub_port_is_already_in_use(
+    def test_throws_exception_and_shuts_down_mock_when_MOCK_PORT_is_already_in_use(
         self,
     ):
         with pytest.raises(Exception) as exception:
