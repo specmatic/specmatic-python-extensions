@@ -10,4 +10,4 @@ sanic==23.12.1
 marshmallow==3.21.3
 coverage==7.5.3
 python-dotenv==1.0.1
-setuptools==70.0.0
+setuptools==78.1.1
