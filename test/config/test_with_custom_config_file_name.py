@@ -20,7 +20,7 @@ class TestContract:
 
 os.environ["SPECMATIC_GENERATIVE_TESTS"] = "true"
 
-Specmatic().with_project_root(ROOT_DIR).with_specmatic_config_file_path(SPECMATIC_CONFIG_CUSTOM).with_stub(
+Specmatic().with_project_root(ROOT_DIR).with_specmatic_config_file_path(SPECMATIC_CONFIG_CUSTOM).with_mock(
     STUB_HOST, STUB_PORT, expectation_json_files
 ).with_wsgi_app(
     FLASK_APP,

@@ -1,6 +1,6 @@
 import unittest
 
-from specmatic.core.specmatic_stub import SpecmaticStub
+from specmatic.core.specmatic_mock import SpecmaticMock
 from specmatic.core.specmatic_test import SpecmaticTest
 from specmatic.coverage.app_route_adapter import AppRouteAdapter
 from specmatic.coverage.servers.coverage_server import CoverageServer
@@ -11,15 +11,15 @@ from specmatic.servers.wsgi_app_server import WSGIAppServer
 from specmatic.utils import get_junit_report_file_path
 
 
-def specmatic_stub(host: str = '127.0.0.1', port: int = 0, project_root: str = '', expectations=None,
+def specmatic_mock(host: str = '127.0.0.1', port: int = 0, project_root: str = '', expectations=None,
                    specmatic_config_file_path: str = ''):
     def decorator(cls):
         try:
-            cls.stub = SpecmaticStub(host, port, project_root, specmatic_config_file_path)
-            cls.stub.set_expectations(expectations)
+            cls.mock = SpecmaticMock(host, port, project_root, specmatic_config_file_path)
+            cls.mock.set_expectations(expectations)
         except Exception as e:
-            if hasattr(cls, 'stub'):
-                cls.stub.stop()
+            if hasattr(cls, 'mock'):
+                cls.mock.stop()
             if hasattr(cls, 'app'):
                 cls.app.stop()
             print(f"Error: {e}")
@@ -60,15 +60,15 @@ def specmatic_contract_test(host: str = '127.0.0,1', port: int = 0,
         except Exception as e:
             if hasattr(cls, 'app'):
                 cls.app.stop()
-            if hasattr(cls, 'stub'):
-                cls.stub.stop()
+            if hasattr(cls, 'mock'):
+                cls.mock.stop()
             if hasattr(cls, 'coverage_server'):
                 cls.coverage_server.stop()
             print(f"Error: {e}")
             raise e
         finally:
-            if hasattr(cls, 'stub'):
-                cls.stub.stop()
+            if hasattr(cls, 'mock'):
+                cls.mock.stop()
             if hasattr(cls, 'app'):
                 cls.app.stop()
             if hasattr(cls, 'coverage_server'):
@@ -84,8 +84,8 @@ def start_wsgi_app(app, host: str = '127.0.0.1', port: int = 0):
             cls.app.start()
             return cls
         except Exception as e:
-            if hasattr(cls, 'stub'):
-                cls.stub.stop()
+            if hasattr(cls, 'mock'):
+                cls.mock.stop()
             if hasattr(cls, 'app'):
                 cls.app.stop()
             print(f"Error: {e}")
@@ -101,8 +101,8 @@ def start_asgi_app(app_module: str, host: str = '127.0.0.1', port: int = 0):
             cls.app.start()
             return cls
         except Exception as e:
-            if hasattr(cls, 'stub'):
-                cls.stub.stop()
+            if hasattr(cls, 'mock'):
+                cls.mock.stop()
             if hasattr(cls, 'app'):
                 cls.app.stop()
             print(f"Error: {e}")

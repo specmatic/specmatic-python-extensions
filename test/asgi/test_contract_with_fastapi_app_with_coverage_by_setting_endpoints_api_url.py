@@ -27,7 +27,7 @@ class TestContract:
     pass
 
 
-Specmatic().with_project_root(ROOT_DIR).with_stub(
+Specmatic().with_project_root(ROOT_DIR).with_mock(
     STUB_HOST, STUB_PORT, expectation_json_files
 ).with_endpoints_api(coverage_server.endpoints_api).test(
     TestContract, APP_HOST, APP_PORT

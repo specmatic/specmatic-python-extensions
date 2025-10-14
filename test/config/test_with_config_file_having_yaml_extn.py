@@ -21,7 +21,7 @@ class TestContract:
 os.environ["SPECMATIC_GENERATIVE_TESTS"] = "true"
 os.rename(SPECMATIC_CONFIG_JSON, SPECMATIC_CONFIG_JSON + ".bak")
 
-Specmatic().with_project_root(ROOT_DIR).with_stub(
+Specmatic().with_project_root(ROOT_DIR).with_mock(
     STUB_HOST, STUB_PORT, expectation_json_files
 ).with_wsgi_app(
     FLASK_APP,

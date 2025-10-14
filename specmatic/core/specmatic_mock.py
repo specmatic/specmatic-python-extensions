@@ -11,25 +11,25 @@ import requests
 from specmatic.core.specmatic_base import SpecmaticBase
 
 
-class SpecmaticStub(SpecmaticBase):
+class SpecmaticMock(SpecmaticBase):
 
     def __init__(self, host: str = '127.0.0.1', port: int = 0, project_root: str = '',
                  specmatic_config_file_path: str = '', args=None):
         super().__init__(host, port, project_root, specmatic_config_file_path, args)
-        self.__stub_started_event = None
+        self.__mock_started_event = None
         self.__process = None
         self.__free_port_message = 'Free port found'
-        self.__stub_serving_message = 'serving endpoints from specs'
+        self.__mock_serving_message = 'serving endpoints from specs'
         self.__error_queue = Queue()
         self.__start()
 
     def __start(self):
         try:
-            self.__stub_started_event = threading.Event()
-            self.__start_specmatic_stub_in_subprocess()
-            self.__start_reading_stub_output()
-            self.__start_reading_stub_error_output()
-            self.__wait_till_stub_has_started()
+            self.__mock_started_event = threading.Event()
+            self.__start_specmatic_mock_in_subprocess()
+            self.__start_reading_mock_output()
+            self.__start_reading_mock_error_output()
+            self.__wait_till_mock_has_started()
         except Exception as e:
             self.stop()
             print(f"Error: {e}")
@@ -37,13 +37,13 @@ class SpecmaticStub(SpecmaticBase):
 
     def stop(self):
         if self.__process is not None:
-            print(f"\n Shutting down specmatic stub server on {self.host}:{self.port}, please wait ...")
+            print(f"\n Shutting down specmatic mock server on {self.host}:{self.port}, please wait ...")
             self.__process.kill()
 
     def set_expectations(self, file_paths: list[str], port: int|None = None):
         port = port or self.port
         if port is None:
-            raise Exception("The port needs to be specified, as the stub started on a random port and extraction failed from logs")
+            raise Exception("The port needs to be specified, as the mock started on a random port and extraction failed from logs")
 
         if file_paths is None:
             file_paths = []
@@ -68,49 +68,49 @@ class SpecmaticStub(SpecmaticBase):
     def __get_expectations_api_url(self, port):
         return f'http://{self.host}:{port}/_specmatic/expectations'
 
-    def __start_specmatic_stub_in_subprocess(self):
-        stub_command = self.__create_stub_process_command()
+    def __start_specmatic_mock_in_subprocess(self):
+        mock_command = self.__create_mock_process_command()
         if self.host != '' and self.port != 0:
-            print(f"\n Starting specmatic stub server on {self.host}:{self.port}")
-        self.__process = subprocess.Popen(stub_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            print(f"\n Starting specmatic mock server on {self.host}:{self.port}")
+        self.__process = subprocess.Popen(mock_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-    def __start_reading_stub_output(self):
+    def __start_reading_mock_output(self):
         stdout_reader = threading.Thread(target=self.__read_process_output, daemon=True)
         stdout_reader.start()
 
-    def __start_reading_stub_error_output(self):
+    def __start_reading_mock_error_output(self):
         error_reader = threading.Thread(target=self.__read_process_error_output, daemon=True)
         error_reader.start()
 
-    def __wait_till_stub_has_started(self):
-        self.__stub_started_event.wait()
+    def __wait_till_mock_has_started(self):
+        self.__mock_started_event.wait()
         if not self.__error_queue.empty():
             error = self.__error_queue.get()
-            raise Exception(f"An exception occurred while starting the stub: {error}")
+            raise Exception(f"An exception occurred while starting the mock: {error}")
 
     def __read_process_output(self):
-        def signal_event_if_stub_has_started(line):
+        def signal_event_if_mock_has_started(line):
             if self.__free_port_message in line and self.port == 0:
                 self.port = line.split(self.__free_port_message + ":")[1].strip()
 
-            if self.__stub_serving_message in line:
+            if self.__mock_serving_message in line:
                 if self.port == 0:
-                    self.port = self._extract_port(line.split(self.__stub_serving_message)[0])
-                self.__stub_started_event.set()
+                    self.port = self._extract_port(line.split(self.__mock_serving_message)[0])
+                self.__mock_started_event.set()
 
         def read_and_print_output_line_by_line():
             for line in iter(self.__process.stdout.readline, ''):
                 if line:
                     line = line.decode().rstrip()
                     print(line)
-                    signal_event_if_stub_has_started(line)
+                    signal_event_if_mock_has_started(line)
 
         try:
             read_and_print_output_line_by_line()
         except Exception:
             tb = traceback.format_exc()
             self.__error_queue.put(tb)
-            self.__stub_started_event.set()
+            self.__mock_started_event.set()
 
     @staticmethod
     def _extract_port(text: str) -> str:
@@ -135,11 +135,11 @@ class SpecmaticStub(SpecmaticBase):
                 if line or self.__process.poll() is not None:
                     line = line.decode().rstrip()
                     print(line)
-                    raise Exception('Stub process terminated due to an error ' + line)
+                    raise Exception('Mock process terminated due to an error ' + line)
         except Exception:
             tb = traceback.format_exc()
             self.__error_queue.put(tb)
-            self.__stub_started_event.set()
+            self.__mock_started_event.set()
 
-    def __create_stub_process_command(self):
+    def __create_mock_process_command(self):
         return self.create_command_array('stub')

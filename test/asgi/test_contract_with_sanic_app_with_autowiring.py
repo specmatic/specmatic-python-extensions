@@ -22,7 +22,7 @@ def reset_app_config():
     os.environ["API_URL"] = f"http://{STUB_HOST}:{STUB_PORT}"
 
 
-Specmatic().with_project_root(ROOT_DIR).with_stub(
+Specmatic().with_project_root(ROOT_DIR).with_mock(
     expectations=expectation_json_files
 ).with_asgi_app(
     SANIC_STR,

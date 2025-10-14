@@ -34,9 +34,9 @@ class WSGIAppServer(AppServer):
     def port(self):
         return self.app_port
 
-    def set_app_config(self, stub_host: str, stub_port: int):
+    def set_app_config(self, mock_host: str, mock_port: int):
         if self.set_app_config_func is not None:
-            self.set_app_config_func(self.app, stub_host, stub_port)
+            self.set_app_config_func(self.app, mock_host, mock_port)
 
     def reset_app_config(self):
         if self.reset_app_config_func is not None:

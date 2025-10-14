@@ -1,7 +1,7 @@
 import unittest
 
 from specmatic.coverage.app_route_adapter import AppRouteAdapter
-from specmatic.core.specmatic_stub import SpecmaticStub
+from specmatic.core.specmatic_mock import SpecmaticMock
 from specmatic.core.specmatic_test import SpecmaticTest
 from specmatic.generators.pytest_generator import PyTestGenerator
 from specmatic.generators.unittest_generator import UnitTestGenerator
@@ -25,11 +25,11 @@ class Specmatic:
         self.set_app_config_func = None
         self.app_server = None
 
-        self.stub_host = None
-        self.stub_port = None
+        self.mock_host = None
+        self.mock_port = None
         self.expectations = None
-        self.stub_args = None
-        self.stub = None
+        self.mock_args = None
+        self.mock = None
 
         self.test_class = None
         self.test_host = None
@@ -39,7 +39,7 @@ class Specmatic:
         self.project_root = ''
         self.specmatic_config_file_path = ''
 
-        self.run_stub = False
+        self.run_mock = False
         self.run_app = False
         self.run_tests = False
 
@@ -54,12 +54,12 @@ class Specmatic:
         self.specmatic_config_file_path = specmatic_config_file_path
         return self
 
-    def with_stub(self, stub_host: str = '127.0.0.1', stub_port: int = 0, expectations=None, args=None):
-        self.stub_host = stub_host
-        self.stub_port = stub_port
-        self.run_stub = True
+    def with_mock(self, mock_host: str = '127.0.0.1', mock_port: int = 0, expectations=None, args=None):
+        self.mock_host = mock_host
+        self.mock_port = mock_port
+        self.run_mock = True
         self.expectations = expectations
-        self.stub_args = args
+        self.mock_args = args
         return self
 
     def app(self, app_server: AppServer):
@@ -136,13 +136,13 @@ class Specmatic:
                 self.app_server = ASGIAppServer(self.app_module, self.app_host, self.app_port, self.set_app_config_func,
                                                 self.reset_app_config_func)
 
-    def __start_stub(self):
-        if self.run_stub:
-            self.stub = SpecmaticStub(self.stub_host, self.stub_port, self.project_root, self.specmatic_config_file_path,
-                                      self.stub_args)
-            self.stub.set_expectations(self.expectations)
+    def __start_mock(self):
+        if self.run_mock:
+            self.mock = SpecmaticMock(self.mock_host, self.mock_port, self.project_root, self.specmatic_config_file_path,
+                                      self.mock_args)
+            self.mock.set_expectations(self.expectations)
             if self.app_server is not None:
-                self.app_server.set_app_config(self.stub.host, self.stub.port)
+                self.app_server.set_app_config(self.mock.host, self.mock.port)
 
     def __execute_tests(self):
         if self.run_tests:
@@ -169,7 +169,7 @@ class Specmatic:
     def run(self):
         try:
             self.__init_app_server()
-            self.__start_stub()
+            self.__start_mock()
             self.__execute_tests()
         except Exception as e:
             print(f"Error: {e}")
@@ -180,5 +180,5 @@ class Specmatic:
             if self.app_server is not None:
                 self.app_server.stop()
                 self.app_server.reset_app_config()
-            if self.stub is not None:
-                self.stub.stop()
+            if self.mock is not None:
+                self.mock.stop()
