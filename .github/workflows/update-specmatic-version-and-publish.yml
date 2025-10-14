@@ -1,0 +1,42 @@
+name: Update Specmatic Version and Publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      specmatic-core-version:
+        description: Specmatic Core Version
+        required: false
+        type: string
+        default: ''
+
+jobs:
+  update-specmatic-version-and-publish:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.specmatic-core-version != '' }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Configure git cli
+        run: |
+          git config --global user.email "github-service-account@specmatic.io"
+          git config --global user.name "Specmatic GitHub Service Account"
+
+      - name: Update version in version.py
+        run: |
+          SPEC_VERSION="${{ github.event.inputs.specmatic-core-version }}"
+          sed -i "s/__version__ = '[^']*'/__version__ = '$SPEC_VERSION'/" specmatic/version.py
+          sed -i "s/__specmatic_version__ = '[^']*'/__specmatic_version__ = '$SPEC_VERSION'/" specmatic/version.py
+
+      - name: Commit and push changes
+        run: |
+          git add specmatic/version.py
+          git commit -m "chore: bump version and specmatic_version to ${{ github.event.inputs.specmatic-core-version }}"
+          git push
+
+      - name: Trigger publish workflow
+        uses: peter-evans/workflow-dispatch@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          workflow: publish-to-test-pypi.yml
+          ref: ${{ github.ref }}
