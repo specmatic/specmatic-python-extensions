@@ -9,7 +9,7 @@ from .schemas import Order, Product, ProductType
 ENVS = {
     "ORDER_API_HOST": os.getenv("ORDER_API_HOST"),
     "ORDER_API_PORT": os.getenv("ORDER_API_PORT"),
-    "API_URL": f"http://{os.getenv("ORDER_API_HOST")}:{os.getenv("ORDER_API_PORT")}",
+    "API_URL": "http://" + os.getenv("ORDER_API_HOST") + ":"  + os.getenv("ORDER_API_PORT"),
     "AUTH_TOKEN": os.getenv("AUTH_TOKEN") or "API-TOKEN-SPEC",
     "REQ_TIMEOUT": os.getenv("REQ_TIMEOUT") or 3000,
 }

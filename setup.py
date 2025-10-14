@@ -14,6 +14,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='specmatic',
+    python_requires='>=3.11',
     version=version['__version__'],
     description='A Python module for using the Specmatic Library.',
     long_description=long_description,
