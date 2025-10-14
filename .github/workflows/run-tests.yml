@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:
@@ -13,8 +16,8 @@ jobs:
       contents: read
     strategy:
       matrix:
-        os: [ ubuntu-latest]
-        python-version: [3.11, 3.12, 3.13]
+        os: [ ubuntu-latest ]
+        python-version: [ 3.11, 3.12, 3.13 ]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Set up JDK 17
@@ -30,22 +33,25 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           cache: 'pip'
-      - name: Install pypa/build
-        run: >-
-          python -m pip install build --user
+
       - name: Run pip install
         run: pip install -r requirements.txt
+
       - name: Run contract as tests with Specmatic Python
         run: coverage run --branch -m pytest test -v -s --junitxml contract-test-reports/TEST-junit-jupiter.xml
+
       - name: Publish contract test report
         uses: mikepenz/action-junit-report@v4
         if: always()
         with:
           report_paths: '**/contract-test-reports/TEST-*.xml'
+          check_name: Test Report (Python ${{ matrix.python-version }})
+
       - name: Generate coverage report
         run: coverage html -d coverage-report
+
       - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
-          name: coverage-report
+          name: coverage-report-py${{ matrix.python-version }}
           path: coverage-report
