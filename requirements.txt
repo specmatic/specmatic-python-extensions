@@ -7,7 +7,7 @@ flask==3.0.3
 sanic==23.12.1
 
 #dev dependencies
-marshmallow==3.21.3
+marshmallow==3.26.1
 coverage==7.5.3
 python-dotenv==1.0.1
 setuptools==70.0.0
