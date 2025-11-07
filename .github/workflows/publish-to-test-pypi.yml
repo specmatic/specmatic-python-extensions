@@ -9,21 +9,32 @@ jobs:
     name: Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'oracle'
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
           cache: 'pip'
-      - name: Install pypa/build
-        run: >-
-          python -m pip install build --user
+
       - name: Run pip install
         run: pip install -r requirements.txt
+
+      - name: Run contract as tests with Specmatic Python
+        run: coverage run --branch -m pytest test -v -s --junitxml contract-test-reports/TEST-junit-jupiter.xml
+
+      - name: Install pypa/build
+        run: python -m pip install build --user
+
       - name: Build a binary wheel and a source tarball
-        run: >-
-          python -m build --sdist --wheel --outdir dist/
+        run: python -m build --sdist --wheel --outdir dist/
+
       - name: Publish distribution 📦 to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
