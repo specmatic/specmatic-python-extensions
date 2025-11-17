@@ -38,7 +38,12 @@ class SpecmaticMock(SpecmaticBase):
     def stop(self):
         if self.__process is not None:
             print(f"\n Shutting down specmatic mock server on {self.host}:{self.port}, please wait ...")
-            self.__process.kill()
+            self.__process.terminate()
+            if self.__process.wait(5):
+                print(f"\n Specmatic mock server on {self.host}:{self.port} has been shutdown successfully")
+            else:
+                print(f"\n Specmatic mock server on {self.host}:{self.port} did not shutdown in time, killing the process")
+                self.__process.kill()
 
     def set_expectations(self, file_paths: list[str], port: int|None = None):
         port = port or self.port
