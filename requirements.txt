@@ -1,5 +1,5 @@
 pytest==8.2.2
-requests==2.32.3
+requests==2.32.4
 Werkzeug==3.0.3
 uvicorn==0.30.1
 fastapi==0.111.0
