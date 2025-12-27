@@ -21,6 +21,7 @@ setup(
     long_description_content_type='text/markdown',
     author='Specmatic Builders',
     author_email='info@core.in',
+    license='MIT',
     url='https://github.com/specmatic/specmatic-python-extensions',
     packages=find_packages(exclude=['test', 'test.*']),
     include_package_data=True,
