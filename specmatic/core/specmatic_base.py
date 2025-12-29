@@ -20,13 +20,14 @@ class SpecmaticBase:
             print("Setting Endpoints API as: " + self.endpoints_api)
             cmd.append("-DendpointsAPI=" + self.endpoints_api)
 
+        cmd.append('-Dspecmatic.executor=python')
         cmd.append("-jar")
         cmd.append(jar_path)
         cmd.append(mode)
 
         if self.specmatic_config_file_path != '':
             cmd.append("--config=" + self.specmatic_config_file_path)
-            
+
         cmd += ['--host=' + self.host]
         if self.port != 0:
             cmd += ["--port=" + str(self.port)]
