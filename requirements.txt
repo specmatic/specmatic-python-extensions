@@ -1,6 +1,6 @@
 pytest==9.0.2
 requests==2.32.4
-Werkzeug==3.0.3
+Werkzeug==3.1.4
 uvicorn==0.40.0
 fastapi==0.128.0
 flask==3.0.3
