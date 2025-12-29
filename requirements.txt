@@ -4,7 +4,7 @@ Werkzeug==3.0.3
 uvicorn==0.40.0
 fastapi==0.111.0
 flask==3.0.3
-sanic==23.12.1
+sanic==23.12.2
 
 #dev dependencies
 marshmallow==3.26.2
