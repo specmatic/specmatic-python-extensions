@@ -1,0 +1,1076 @@
+<testsuite errors="0" failures="3" hostname="Sufiyan-PC" name="Contract Tests" skipped="0" tests="162" time="4.425" timestamp="2024-06-16T00:10:07">
+<properties>
+<property name="endpointsAPI" value="http://127.0.0.1:64413/actuator/mappings"/>
+<property name="environment" value=""/>
+<property name="file.encoding" value="Cp1252"/>
+<property name="file.separator" value="\"/>
+<property name="host" value="127.0.0.1"/>
+<property name="java.awt.headless" value="true"/>
+<property name="java.class.path" value="D:\Specmatic\specmatic-python-extensions\specmatic\core/specmatic.jar"/>
+<property name="java.class.version" value="61.0"/>
+<property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.11.9-hotspot"/>
+<property name="java.io.tmpdir" value="C:\Users\mohds\AppData\Local\Temp\"/>
+<property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.11.9-hotspot\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:\Specmatic\specmatic-order-api-python\.venv\Scripts;C:\Program Files\Eclipse Adoptium\jdk-17.0.11.9-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Java Switcher;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Java Switcher;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\mohds\AppData\Local\pnpm;C:\Users\mohds\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\mohds\AppData\Local\Programs\Python\Python312\;C:\Users\mohds\AppData\Local\Microsoft\WindowsApps;C:\Users\mohds\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\mohds\AppData\Roaming\npm;C:\Users\mohds\AppData\Local\JetBrains\Toolb;;."/>
+<property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+<property name="java.runtime.version" value="17.0.11+9"/>
+<property name="java.specification.name" value="Java Platform API Specification"/>
+<property name="java.specification.vendor" value="Oracle Corporation"/>
+<property name="java.specification.version" value="17"/>
+<property name="java.vendor" value="Eclipse Adoptium"/>
+<property name="java.vendor.url" value="https://adoptium.net/"/>
+<property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+<property name="java.vendor.version" value="Temurin-17.0.11+9"/>
+<property name="java.version" value="17.0.11"/>
+<property name="java.version.date" value="2024-04-16"/>
+<property name="java.vm.compressedOopsMode" value="Zero based"/>
+<property name="java.vm.info" value="mixed mode, sharing"/>
+<property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+<property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+<property name="java.vm.specification.version" value="17"/>
+<property name="java.vm.vendor" value="Eclipse Adoptium"/>
+<property name="java.vm.version" value="17.0.11+9"/>
+<property name="jdk.debug" value="release"/>
+<property name="line.separator" value=" "/>
+<property name="manifestFile" value="D:\Specmatic\specmatic-order-api-python/specmatic.json"/>
+<property name="native.encoding" value="Cp1252"/>
+<property name="os.arch" value="amd64"/>
+<property name="os.name" value="Windows 11"/>
+<property name="os.version" value="10.0"/>
+<property name="path.separator" value=";"/>
+<property name="port" value="64390"/>
+<property name="protocol" value="http"/>
+<property name="suggestions" value=""/>
+<property name="suggestionsPath" value=""/>
+<property name="sun.arch.data.model" value="64"/>
+<property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-17.0.11.9-hotspot\bin"/>
+<property name="sun.cpu.endian" value="little"/>
+<property name="sun.cpu.isalist" value="amd64"/>
+<property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+<property name="sun.java.command" value="D:\Specmatic\specmatic-python-extensions\specmatic\core/specmatic.jar test --config=D:\Specmatic\specmatic-order-api-python/specmatic.json --host=127.0.0.1 --port=64390 --junitReportDir=D:\Specmatic\specmatic-python-extensions/junit_report"/>
+<property name="sun.java.launcher" value="SUN_STANDARD"/>
+<property name="sun.jnu.encoding" value="Cp1252"/>
+<property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+<property name="sun.os.patch.level" value=""/>
+<property name="sun.stderr.encoding" value="cp437"/>
+<property name="sun.stdout.encoding" value="cp437"/>
+<property name="timeout" value="60"/>
+<property name="user.country" value="US"/>
+<property name="user.dir" value="D:\Specmatic\specmatic-order-api-python"/>
+<property name="user.home" value="C:\Users\mohds"/>
+<property name="user.language" value="en"/>
+<property name="user.name" value="mohds"/>
+<property name="user.script" value=""/>
+<property name="user.timezone" value="Asia/Calcutta"/>
+<property name="user.variant" value=""/>
+</properties>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: GET /products/(id:number) -&gt; 404 | EX:INVALID_ID" time="0.016">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#6]
+display-name: +ve  Scenario: GET /products/(id:number) -> 404 | EX:INVALID_ID
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: DELETE /products/(id:number) -&gt; 200 | EX:DELETE_PRODUCT" time="0.018">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#7]
+display-name: +ve  Scenario: DELETE /products/(id:number) -> 200 | EX:DELETE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: POST /products/(id:number) -&gt; 200 | EX:UPDATE_PRODUCT" time="0.014">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#4]
+display-name: +ve  Scenario: POST /products/(id:number) -> 200 | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: GET /products/(id:number) -&gt; 200 | EX:GET_PRODUCT" time="0.015">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#5]
+display-name: +ve  Scenario: GET /products/(id:number) -> 200 | EX:GET_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: POST /products/(id:number) -&gt; 200 | EX:UPDATE_PRODUCT" time="0.015">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#2]
+display-name: +ve  Scenario: POST /products/(id:number) -> 200 | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: POST /products/(id:number) -&gt; 200 | EX:UPDATE_PRODUCT" time="0.013">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#3]
+display-name: +ve  Scenario: POST /products/(id:number) -> 200 | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: POST /products/(id:number) -&gt; 200 | EX:UPDATE_PRODUCT" time="0.063">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#1]
+display-name: +ve  Scenario: POST /products/(id:number) -> 200 | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.type selected gadget from enum, REQUEST.BODY.inventory number mutated to string]" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#92]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.type selected gadget from enum, REQUEST.BODY.inventory number mutated to string]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.count number mutated to boolean, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#153]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.count number mutated to boolean, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.type selected food from enum, REQUEST.BODY.inventory number mutated to boolean]" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#91]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.type selected food from enum, REQUEST.BODY.inventory number mutated to boolean]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.count number mutated to boolean] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#152]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.count number mutated to boolean] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.type selected book from enum, REQUEST.BODY.inventory number mutated to null]" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#90]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.type selected book from enum, REQUEST.BODY.inventory number mutated to null]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.count number mutated to null, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#151]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.count number mutated to null, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.count number mutated to null, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#150]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.count number mutated to null, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: POST /products -&gt; 200" time="0.016">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#8]
+display-name: +ve  Scenario: POST /products -> 200
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: POST /products -&gt; 200" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#9]
+display-name: +ve  Scenario: POST /products -> 200
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: GET /products -&gt; 200" time="0.013">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#12]
+display-name: +ve  Scenario: GET /products -> 200
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: POST /products -&gt; 200" time="0.005">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#11]
+display-name: +ve  Scenario: POST /products -> 200
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.type selected gadget from enum, REQUEST.BODY.inventory number mutated to boolean]" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#99]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.type selected gadget from enum, REQUEST.BODY.inventory number mutated to boolean]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.count number mutated to string, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#149]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.count number mutated to string, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: POST /products -&gt; 200" time="0.014">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#10]
+display-name: +ve  Scenario: POST /products -> 200
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.type selected gadget from enum, REQUEST.BODY.inventory number mutated to null]" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#98]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.type selected gadget from enum, REQUEST.BODY.inventory number mutated to null]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.count number mutated to boolean, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#148]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.count number mutated to boolean, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.type selected food from enum, REQUEST.BODY.inventory number mutated to string]" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#97]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.type selected food from enum, REQUEST.BODY.inventory number mutated to string]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.count number mutated to null] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#147]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.count number mutated to null] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.type selected food from enum, REQUEST.BODY.inventory number mutated to null]" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#96]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.type selected food from enum, REQUEST.BODY.inventory number mutated to null]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.productid number mutated to string, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#146]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.productid number mutated to string, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.type selected book from enum, REQUEST.BODY.inventory number mutated to string]" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#95]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.type selected book from enum, REQUEST.BODY.inventory number mutated to string]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.productid number mutated to string] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#145]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.productid number mutated to string] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.type selected book from enum, REQUEST.BODY.inventory number mutated to boolean]" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#94]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.type selected book from enum, REQUEST.BODY.inventory number mutated to boolean]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.productid number mutated to boolean, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#144]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.productid number mutated to boolean, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.type selected other from enum, REQUEST.BODY.inventory number mutated to null]" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#93]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.type selected other from enum, REQUEST.BODY.inventory number mutated to null]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.productid number mutated to boolean] | EX:UPDATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#143]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.productid number mutated to boolean] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: POST /orders -&gt; 200 | EX:CREATE_ORDER" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#19]
+display-name: +ve  Scenario: POST /orders -> 200 | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: POST /orders -&gt; 200 | EX:CREATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#18]
+display-name: +ve  Scenario: POST /orders -> 200 | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: POST /orders -&gt; 200 | EX:CREATE_ORDER" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#17]
+display-name: +ve  Scenario: POST /orders -> 200 | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: GET /products -&gt; 200" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#16]
+display-name: +ve  Scenario: GET /products -> 200
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: GET /products -&gt; 200" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#15]
+display-name: +ve  Scenario: GET /products -> 200
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: GET /products -&gt; 200" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#14]
+display-name: +ve  Scenario: GET /products -> 200
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: GET /products -&gt; 200" time="0.016">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#13]
+display-name: +ve  Scenario: GET /products -> 200
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: DELETE /orders/(id:number) -&gt; 4xx [REQUEST.PATH.id number mutated to string] | EX:DELETE_ORDER" time="0.011">
+<failure message="Testing scenario &quot;Cancel an order. Response: Cancel successful&quot; API: DELETE /orders/(id:number) -&gt; 400    &gt;&gt; RESPONSE.STATUS         Expected 4xx status, but received 200" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Testing scenario "Cancel an order. Response: Cancel successful"
+API: DELETE /orders/(id:number) -> 400
+
+  >> RESPONSE.STATUS
+  
+     Expected 4xx status, but received 200
+	at in.specmatic.test.SpecmaticJUnitSupport$dynamicTestStream$1.invoke$lambda$1(SpecmaticJUnitSupport.kt:310)
+	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></failure>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#162]
+display-name: -ve  Scenario: DELETE /orders/(id:number) -> 4xx [REQUEST.PATH.id number mutated to string] | EX:DELETE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: DELETE /orders/(id:number) -&gt; 4xx [REQUEST.PATH.id number mutated to boolean] | EX:DELETE_ORDER" time="0.011">
+<failure message="Testing scenario &quot;Cancel an order. Response: Cancel successful&quot; API: DELETE /orders/(id:number) -&gt; 400    &gt;&gt; RESPONSE.STATUS         Expected 4xx status, but received 200" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Testing scenario "Cancel an order. Response: Cancel successful"
+API: DELETE /orders/(id:number) -> 400
+
+  >> RESPONSE.STATUS
+  
+     Expected 4xx status, but received 200
+	at in.specmatic.test.SpecmaticJUnitSupport$dynamicTestStream$1.invoke$lambda$1(SpecmaticJUnitSupport.kt:310)
+	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></failure>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#161]
+display-name: -ve  Scenario: DELETE /orders/(id:number) -> 4xx [REQUEST.PATH.id number mutated to boolean] | EX:DELETE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: GET /orders/(id:number) -&gt; 4xx [REQUEST.PATH.id number mutated to string] | EX:GET_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#160]
+display-name: -ve  Scenario: GET /orders/(id:number) -> 4xx [REQUEST.PATH.id number mutated to string] | EX:GET_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: GET /orders -&gt; 200 | EX:200_OK" time="0.017">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#23]
+display-name: +ve  Scenario: GET /orders -> 200 | EX:200_OK
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: GET /orders -&gt; 200 | EX:200_OK" time="0.008">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#22]
+display-name: +ve  Scenario: GET /orders -> 200 | EX:200_OK
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: GET /orders -&gt; 200 | EX:200_OK" time="0.007">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#21]
+display-name: +ve  Scenario: GET /orders -> 200 | EX:200_OK
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: GET /orders/(id:number) -&gt; 4xx [REQUEST.PATH.id number mutated to boolean] | EX:GET_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#159]
+display-name: -ve  Scenario: GET /orders/(id:number) -> 4xx [REQUEST.PATH.id number mutated to boolean] | EX:GET_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: GET /orders -&gt; 200 | EX:200_OK" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#20]
+display-name: +ve  Scenario: GET /orders -> 200 | EX:200_OK
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.status (&quot;fulfilled&quot; or &quot;pending&quot; or &quot;cancelled&quot;) mutated to boolean] | EX:UPDATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#158]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.status ("fulfilled" or "pending" or "cancelled") mutated to boolean] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.status (&quot;fulfilled&quot; or &quot;pending&quot; or &quot;cancelled&quot;) mutated to number] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#157]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.status ("fulfilled" or "pending" or "cancelled") mutated to number] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.status (&quot;fulfilled&quot; or &quot;pending&quot; or &quot;cancelled&quot;) mutated to null] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#156]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.status ("fulfilled" or "pending" or "cancelled") mutated to null] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.count number mutated to string, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#155]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.count number mutated to string, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.count number mutated to string] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#154]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.count number mutated to string] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: DELETE /orders/(id:number) -&gt; 200 | EX:DELETE_ORDER" time="0.016">
+<failure message="Testing scenario &quot;Cancel an order. Response: Cancel successful&quot; API: DELETE /orders/(id:number) -&gt; 200    &gt;&gt; RESPONSE.HEADERS.Content-Type         Content-Type header mismatch, expected &quot;text/plain&quot;, found &quot;text/html; charset=utf-8&quot;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: Testing scenario "Cancel an order. Response: Cancel successful"
+API: DELETE /orders/(id:number) -> 200
+
+  >> RESPONSE.HEADERS.Content-Type
+  
+     Content-Type header mismatch, expected "text/plain", found "text/html; charset=utf-8"
+	at in.specmatic.test.SpecmaticJUnitSupport$dynamicTestStream$1.invoke$lambda$1(SpecmaticJUnitSupport.kt:310)
+	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></failure>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#29]
+display-name: +ve  Scenario: DELETE /orders/(id:number) -> 200 | EX:DELETE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: GET /orders/(id:number) -&gt; 404 | EX:INVALID_ID" time="0.014">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#28]
+display-name: +ve  Scenario: GET /orders/(id:number) -> 404 | EX:INVALID_ID
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: GET /orders/(id:number) -&gt; 200 | EX:GET_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#27]
+display-name: +ve  Scenario: GET /orders/(id:number) -> 200 | EX:GET_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: POST /orders/(id:number) -&gt; 200 | EX:UPDATE_ORDER" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#26]
+display-name: +ve  Scenario: POST /orders/(id:number) -> 200 | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: POST /orders/(id:number) -&gt; 200 | EX:UPDATE_ORDER" time="0.014">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#25]
+display-name: +ve  Scenario: POST /orders/(id:number) -> 200 | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="+ve  Scenario: POST /orders/(id:number) -&gt; 200 | EX:UPDATE_ORDER" time="0.013">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#24]
+display-name: +ve  Scenario: POST /orders/(id:number) -> 200 | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to string, REQUEST.BODY.type selected food from enum] | EX:UPDATE_PRODUCT" time="0.006">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#34]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.id number mutated to string, REQUEST.BODY.type selected food from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to boolean, REQUEST.BODY.type selected book from enum] | EX:UPDATE_PRODUCT" time="0.013">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#33]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.id number mutated to boolean, REQUEST.BODY.type selected book from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to null] | EX:UPDATE_PRODUCT" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#32]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.id number mutated to null] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.PATH.id number mutated to string] | EX:UPDATE_PRODUCT" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#31]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.PATH.id number mutated to string] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.PATH.id number mutated to boolean] | EX:UPDATE_PRODUCT" time="0.014">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#30]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.PATH.id number mutated to boolean] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to boolean, REQUEST.BODY.type selected food from enum] | EX:UPDATE_PRODUCT" time="0.02">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#39]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.id number mutated to boolean, REQUEST.BODY.type selected food from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to boolean] | EX:UPDATE_PRODUCT" time="0.015">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#38]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.id number mutated to boolean] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to null, REQUEST.BODY.type selected food from enum] | EX:UPDATE_PRODUCT" time="0.014">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#37]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.id number mutated to null, REQUEST.BODY.type selected food from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to null, REQUEST.BODY.type selected book from enum] | EX:UPDATE_PRODUCT" time="0.018">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#36]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.id number mutated to null, REQUEST.BODY.type selected book from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to null, REQUEST.BODY.type selected other from enum] | EX:UPDATE_PRODUCT" time="0.019">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#35]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.id number mutated to null, REQUEST.BODY.type selected other from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.name string mutated to number, REQUEST.BODY.type selected book from enum] | EX:UPDATE_PRODUCT" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#45]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.name string mutated to number, REQUEST.BODY.type selected book from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.name string mutated to null] | EX:UPDATE_PRODUCT" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#44]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.name string mutated to null] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to string, REQUEST.BODY.type selected other from enum] | EX:UPDATE_PRODUCT" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#43]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.id number mutated to string, REQUEST.BODY.type selected other from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to string, REQUEST.BODY.type selected book from enum] | EX:UPDATE_PRODUCT" time="0.013">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#42]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.id number mutated to string, REQUEST.BODY.type selected book from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to string] | EX:UPDATE_PRODUCT" time="0.024">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#41]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.id number mutated to string] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to boolean, REQUEST.BODY.type selected other from enum] | EX:UPDATE_PRODUCT" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#40]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.id number mutated to boolean, REQUEST.BODY.type selected other from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.name string mutated to null, REQUEST.BODY.type selected food from enum] | EX:UPDATE_PRODUCT" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#49]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.name string mutated to null, REQUEST.BODY.type selected food from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.name string mutated to null, REQUEST.BODY.type selected book from enum] | EX:UPDATE_PRODUCT" time="0.007">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#48]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.name string mutated to null, REQUEST.BODY.type selected book from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.name string mutated to null, REQUEST.BODY.type selected other from enum] | EX:UPDATE_PRODUCT" time="0.013">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#47]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.name string mutated to null, REQUEST.BODY.type selected other from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.name string mutated to boolean, REQUEST.BODY.type selected food from enum] | EX:UPDATE_PRODUCT" time="0.016">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#46]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.name string mutated to boolean, REQUEST.BODY.type selected food from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.type (&quot;book&quot; or &quot;food&quot; or &quot;gadget&quot; or &quot;other&quot;) mutated to null] | EX:UPDATE_PRODUCT" time="0.007">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#56]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.type ("book" or "food" or "gadget" or "other") mutated to null] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.productid number mutated to string, REQUEST.BODY.status selected cancelled from enum] | EX:CREATE_ORDER" time="0.014">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#106]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.productid number mutated to string, REQUEST.BODY.status selected cancelled from enum] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.name string mutated to boolean, REQUEST.BODY.type selected other from enum] | EX:UPDATE_PRODUCT" time="0.014">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#55]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.name string mutated to boolean, REQUEST.BODY.type selected other from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.productid number mutated to boolean, REQUEST.BODY.status selected fulfilled from enum] | EX:CREATE_ORDER" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#105]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.productid number mutated to boolean, REQUEST.BODY.status selected fulfilled from enum] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.name string mutated to boolean, REQUEST.BODY.type selected book from enum] | EX:UPDATE_PRODUCT" time="0.021">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#54]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.name string mutated to boolean, REQUEST.BODY.type selected book from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.productid number mutated to null] | EX:CREATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#104]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.productid number mutated to null] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.name string mutated to boolean] | EX:UPDATE_PRODUCT" time="0.005">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#53]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.name string mutated to boolean] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: GET /products -&gt; 4xx [REQUEST.QUERY-PARAM.type (&quot;book&quot; or &quot;food&quot; or &quot;gadget&quot; or &quot;other&quot;) mutated to boolean]" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#103]
+display-name: -ve  Scenario: GET /products -> 4xx [REQUEST.QUERY-PARAM.type ("book" or "food" or "gadget" or "other") mutated to boolean]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.name string mutated to number, REQUEST.BODY.type selected other from enum] | EX:UPDATE_PRODUCT" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#52]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.name string mutated to number, REQUEST.BODY.type selected other from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: GET /products -&gt; 4xx [REQUEST.QUERY-PARAM.type (&quot;book&quot; or &quot;food&quot; or &quot;gadget&quot; or &quot;other&quot;) mutated to number]" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#102]
+display-name: -ve  Scenario: GET /products -> 4xx [REQUEST.QUERY-PARAM.type ("book" or "food" or "gadget" or "other") mutated to number]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.name string mutated to number, REQUEST.BODY.type selected food from enum] | EX:UPDATE_PRODUCT" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#51]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.name string mutated to number, REQUEST.BODY.type selected food from enum] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.type selected other from enum, REQUEST.BODY.inventory number mutated to string]" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#101]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.type selected other from enum, REQUEST.BODY.inventory number mutated to string]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.name string mutated to number] | EX:UPDATE_PRODUCT" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#50]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.name string mutated to number] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.type selected other from enum, REQUEST.BODY.inventory number mutated to boolean]" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#100]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.type selected other from enum, REQUEST.BODY.inventory number mutated to boolean]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.inventory number mutated to null] | EX:UPDATE_PRODUCT" time="0.009">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#59]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.inventory number mutated to null] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.productid number mutated to boolean] | EX:CREATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#109]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.productid number mutated to boolean] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.type (&quot;book&quot; or &quot;food&quot; or &quot;gadget&quot; or &quot;other&quot;) mutated to boolean] | EX:UPDATE_PRODUCT" time="0.006">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#58]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.type ("book" or "food" or "gadget" or "other") mutated to boolean] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.productid number mutated to null, REQUEST.BODY.status selected cancelled from enum] | EX:CREATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#108]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.productid number mutated to null, REQUEST.BODY.status selected cancelled from enum] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.type (&quot;book&quot; or &quot;food&quot; or &quot;gadget&quot; or &quot;other&quot;) mutated to number] | EX:UPDATE_PRODUCT" time="0.02">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#57]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.type ("book" or "food" or "gadget" or "other") mutated to number] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.productid number mutated to null, REQUEST.BODY.status selected fulfilled from enum] | EX:CREATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#107]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.productid number mutated to null, REQUEST.BODY.status selected fulfilled from enum] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.count number mutated to string] | EX:CREATE_ORDER" time="0.009">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#120]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.count number mutated to string] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.type selected food from enum, REQUEST.BODY.inventory number mutated to null] | EX:UPDATE_PRODUCT" time="0.015">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#67]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.type selected food from enum, REQUEST.BODY.inventory number mutated to null] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.count number mutated to null, REQUEST.BODY.status selected cancelled from enum] | EX:CREATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#117]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.count number mutated to null, REQUEST.BODY.status selected cancelled from enum] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.type selected book from enum, REQUEST.BODY.inventory number mutated to string] | EX:UPDATE_PRODUCT" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#66]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.type selected book from enum, REQUEST.BODY.inventory number mutated to string] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.count number mutated to null, REQUEST.BODY.status selected fulfilled from enum] | EX:CREATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#116]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.count number mutated to null, REQUEST.BODY.status selected fulfilled from enum] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.type selected book from enum, REQUEST.BODY.inventory number mutated to null] | EX:UPDATE_PRODUCT" time="0.02">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#65]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.type selected book from enum, REQUEST.BODY.inventory number mutated to null] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.count number mutated to string, REQUEST.BODY.status selected cancelled from enum] | EX:CREATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#115]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.count number mutated to string, REQUEST.BODY.status selected cancelled from enum] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.inventory number mutated to string] | EX:UPDATE_PRODUCT" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#64]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.inventory number mutated to string] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.count number mutated to boolean, REQUEST.BODY.status selected fulfilled from enum] | EX:CREATE_ORDER" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#114]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.count number mutated to boolean, REQUEST.BODY.status selected fulfilled from enum] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.inventory number mutated to boolean] | EX:UPDATE_PRODUCT" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#63]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.inventory number mutated to boolean] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.count number mutated to null] | EX:CREATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#113]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.count number mutated to null] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.type selected other from enum, REQUEST.BODY.inventory number mutated to null] | EX:UPDATE_PRODUCT" time="0.014">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#62]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.type selected other from enum, REQUEST.BODY.inventory number mutated to null] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.productid number mutated to string, REQUEST.BODY.status selected fulfilled from enum] | EX:CREATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#112]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.productid number mutated to string, REQUEST.BODY.status selected fulfilled from enum] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.type selected food from enum, REQUEST.BODY.inventory number mutated to string] | EX:UPDATE_PRODUCT" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#61]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.type selected food from enum, REQUEST.BODY.inventory number mutated to string] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.productid number mutated to string] | EX:CREATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#111]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.productid number mutated to string] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.type selected book from enum, REQUEST.BODY.inventory number mutated to boolean] | EX:UPDATE_PRODUCT" time="0.015">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#60]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.type selected book from enum, REQUEST.BODY.inventory number mutated to boolean] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.productid number mutated to boolean, REQUEST.BODY.status selected cancelled from enum] | EX:CREATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#110]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.productid number mutated to boolean, REQUEST.BODY.status selected cancelled from enum] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.type selected other from enum, REQUEST.BODY.inventory number mutated to boolean] | EX:UPDATE_PRODUCT" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#69]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.type selected other from enum, REQUEST.BODY.inventory number mutated to boolean] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.count number mutated to boolean, REQUEST.BODY.status selected cancelled from enum] | EX:CREATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#119]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.count number mutated to boolean, REQUEST.BODY.status selected cancelled from enum] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.type selected food from enum, REQUEST.BODY.inventory number mutated to boolean] | EX:UPDATE_PRODUCT" time="0.015">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#68]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.type selected food from enum, REQUEST.BODY.inventory number mutated to boolean] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.count number mutated to boolean] | EX:CREATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#118]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.count number mutated to boolean] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products/(id:number) -&gt; 4xx [REQUEST.BODY.type selected other from enum, REQUEST.BODY.inventory number mutated to string] | EX:UPDATE_PRODUCT" time="0.023">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#70]
+display-name: -ve  Scenario: POST /products/(id:number) -> 4xx [REQUEST.BODY.type selected other from enum, REQUEST.BODY.inventory number mutated to string] | EX:UPDATE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to string, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#131]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.id number mutated to string, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to boolean, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#130]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.id number mutated to boolean, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.name string mutated to null, REQUEST.BODY.type selected other from enum]" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#78]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.name string mutated to null, REQUEST.BODY.type selected other from enum]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.PATH.id number mutated to string] | EX:UPDATE_ORDER" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#128]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.PATH.id number mutated to string] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.name string mutated to boolean, REQUEST.BODY.type selected gadget from enum]" time="0.013">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#77]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.name string mutated to boolean, REQUEST.BODY.type selected gadget from enum]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.PATH.id number mutated to boolean] | EX:UPDATE_ORDER" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#127]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.PATH.id number mutated to boolean] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.name string mutated to number, REQUEST.BODY.type selected food from enum]" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#76]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.name string mutated to number, REQUEST.BODY.type selected food from enum]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: GET /orders -&gt; 4xx [REQUEST.QUERY-PARAM.productid number mutated to string] | EX:200_OK" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#126]
+display-name: -ve  Scenario: GET /orders -> 4xx [REQUEST.QUERY-PARAM.productid number mutated to string] | EX:200_OK
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.name string mutated to null, REQUEST.BODY.type selected book from enum]" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#75]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.name string mutated to null, REQUEST.BODY.type selected book from enum]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: GET /orders -&gt; 4xx [REQUEST.QUERY-PARAM.productid number mutated to boolean] | EX:200_OK" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#125]
+display-name: -ve  Scenario: GET /orders -> 4xx [REQUEST.QUERY-PARAM.productid number mutated to boolean] | EX:200_OK
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: DELETE /products/(id:number) -&gt; 4xx [REQUEST.PATH.id number mutated to string] | EX:DELETE_PRODUCT" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#74]
+display-name: -ve  Scenario: DELETE /products/(id:number) -> 4xx [REQUEST.PATH.id number mutated to string] | EX:DELETE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.status (&quot;fulfilled&quot; or &quot;pending&quot; or &quot;cancelled&quot;) mutated to boolean] | EX:CREATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#124]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.status ("fulfilled" or "pending" or "cancelled") mutated to boolean] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: DELETE /products/(id:number) -&gt; 4xx [REQUEST.PATH.id number mutated to boolean] | EX:DELETE_PRODUCT" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#73]
+display-name: -ve  Scenario: DELETE /products/(id:number) -> 4xx [REQUEST.PATH.id number mutated to boolean] | EX:DELETE_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.status (&quot;fulfilled&quot; or &quot;pending&quot; or &quot;cancelled&quot;) mutated to number] | EX:CREATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#123]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.status ("fulfilled" or "pending" or "cancelled") mutated to number] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: GET /products/(id:number) -&gt; 4xx [REQUEST.PATH.id number mutated to string] | EX:GET_PRODUCT" time="0.017">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#72]
+display-name: -ve  Scenario: GET /products/(id:number) -> 4xx [REQUEST.PATH.id number mutated to string] | EX:GET_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.status (&quot;fulfilled&quot; or &quot;pending&quot; or &quot;cancelled&quot;) mutated to null] | EX:CREATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#122]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.status ("fulfilled" or "pending" or "cancelled") mutated to null] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: GET /products/(id:number) -&gt; 4xx [REQUEST.PATH.id number mutated to boolean] | EX:GET_PRODUCT" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#71]
+display-name: -ve  Scenario: GET /products/(id:number) -> 4xx [REQUEST.PATH.id number mutated to boolean] | EX:GET_PRODUCT
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders -&gt; 4xx [REQUEST.BODY.count number mutated to string, REQUEST.BODY.status selected fulfilled from enum] | EX:CREATE_ORDER" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#121]
+display-name: -ve  Scenario: POST /orders -> 4xx [REQUEST.BODY.count number mutated to string, REQUEST.BODY.status selected fulfilled from enum] | EX:CREATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.name string mutated to null, REQUEST.BODY.type selected food from enum]" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#79]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.name string mutated to null, REQUEST.BODY.type selected food from enum]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to null] | EX:UPDATE_ORDER" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#129]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.id number mutated to null] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.name string mutated to number, REQUEST.BODY.type selected book from enum]" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#81]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.name string mutated to number, REQUEST.BODY.type selected book from enum]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.productid number mutated to null, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER" time="0.009">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#142]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.productid number mutated to null, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.name string mutated to null, REQUEST.BODY.type selected gadget from enum]" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#80]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.name string mutated to null, REQUEST.BODY.type selected gadget from enum]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.productid number mutated to null, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#141]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.productid number mutated to null, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.productid number mutated to string, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#140]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.productid number mutated to string, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.type (&quot;book&quot; or &quot;food&quot; or &quot;gadget&quot; or &quot;other&quot;) mutated to boolean]" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#89]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.type ("book" or "food" or "gadget" or "other") mutated to boolean]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.productid number mutated to boolean, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#139]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.productid number mutated to boolean, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.type (&quot;book&quot; or &quot;food&quot; or &quot;gadget&quot; or &quot;other&quot;) mutated to number]" time="0.014">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#88]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.type ("book" or "food" or "gadget" or "other") mutated to number]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.productid number mutated to null] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#138]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.productid number mutated to null] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.type (&quot;book&quot; or &quot;food&quot; or &quot;gadget&quot; or &quot;other&quot;) mutated to null]" time="0.015">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#87]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.type ("book" or "food" or "gadget" or "other") mutated to null]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to string, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#137]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.id number mutated to string, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.name string mutated to boolean, REQUEST.BODY.type selected other from enum]" time="0.014">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#86]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.name string mutated to boolean, REQUEST.BODY.type selected other from enum]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to string] | EX:UPDATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#136]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.id number mutated to string] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.name string mutated to boolean, REQUEST.BODY.type selected food from enum]" time="0.013">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#85]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.name string mutated to boolean, REQUEST.BODY.type selected food from enum]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to boolean, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER" time="0.01">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#135]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.id number mutated to boolean, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.name string mutated to boolean, REQUEST.BODY.type selected book from enum]" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#84]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.name string mutated to boolean, REQUEST.BODY.type selected book from enum]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to boolean] | EX:UPDATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#134]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.id number mutated to boolean] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.name string mutated to number, REQUEST.BODY.type selected other from enum]" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#83]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.name string mutated to number, REQUEST.BODY.type selected other from enum]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to null, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#133]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.id number mutated to null, REQUEST.BODY.status selected cancelled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /products -&gt; 4xx [REQUEST.BODY.name string mutated to number, REQUEST.BODY.type selected gadget from enum]" time="0.012">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#82]
+display-name: -ve  Scenario: POST /products -> 4xx [REQUEST.BODY.name string mutated to number, REQUEST.BODY.type selected gadget from enum]
+]]></system-out>
+</testcase>
+<testcase classname="in.specmatic.test.SpecmaticJUnitSupport" name="-ve  Scenario: POST /orders/(id:number) -&gt; 4xx [REQUEST.BODY.id number mutated to null, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER" time="0.018">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:in.specmatic.test.SpecmaticJUnitSupport]/[test-factory:contractTest()]/[dynamic-test:#132]
+display-name: -ve  Scenario: POST /orders/(id:number) -> 4xx [REQUEST.BODY.id number mutated to null, REQUEST.BODY.status selected fulfilled from enum] | EX:UPDATE_ORDER
+]]></system-out>
+</testcase>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]
+display-name: Contract Tests
+]]></system-out>
+</testsuite>
