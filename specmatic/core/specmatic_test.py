@@ -7,8 +7,14 @@ from specmatic.utils import get_junit_report_dir_path
 
 
 class SpecmaticTest(SpecmaticBase):
-    def __init__(self, host: str = "127.0.0.1", port: int = 5000, project_root: str = '',
-                 specmatic_config_file_path: str = '', args=None, endpoints_api: str = ''):
+    def __init__(self,
+                 host: str | None = None,
+                 port: int | None = None,
+                 project_root: str | None = None,
+                 specmatic_config_file_path: str | None = None,
+                 args=None,
+                 endpoints_api: str | None = None
+                 ):
         super().__init__(host, port, project_root, specmatic_config_file_path, args, endpoints_api)
 
     def run(self):
@@ -25,4 +31,7 @@ class SpecmaticTest(SpecmaticBase):
         print("command array:")
         print(cmd)
         print(f"\n Running specmatic tests for api at {self.host}:{self.port}")
-        subprocess.run(cmd)
+        if self.project_root is not None:
+            subprocess.run(cmd, cwd=self.project_root)
+        else:
+            subprocess.run(cmd)

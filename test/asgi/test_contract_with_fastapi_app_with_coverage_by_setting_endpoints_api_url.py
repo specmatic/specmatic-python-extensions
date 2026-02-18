@@ -10,7 +10,7 @@ from test import (
     APP_PORT,
     FASTAPI_APP,
     FASTAPI_STR,
-    ROOT_DIR,
+    PROJECT_ROOT,
     MOCK_HOST,
     MOCK_PORT,
     expectation_json_files,
@@ -27,11 +27,13 @@ class TestContract:
     pass
 
 
-Specmatic().with_project_root(ROOT_DIR).with_mock(
-    MOCK_HOST, MOCK_PORT, expectation_json_files
-).with_endpoints_api(coverage_server.endpoints_api).test(
-    TestContract, APP_HOST, APP_PORT
-).run()
+(
+    Specmatic(PROJECT_ROOT)
+    .with_mock()
+    .with_endpoints_api(coverage_server.endpoints_api)
+    .test(TestContract)
+    .run()
+)
 
 app_server.stop()
 coverage_server.stop()

@@ -6,10 +6,7 @@ from test import (
     APP_HOST,
     APP_PORT,
     FLASK_APP,
-    ROOT_DIR,
-    MOCK_HOST,
-    MOCK_PORT,
-    expectation_json_files,
+    PROJECT_ROOT,
 )
 
 app_server = WSGIAppServer(FLASK_APP, APP_HOST, APP_PORT)
@@ -20,13 +17,12 @@ class TestContract:
     pass
 
 
-Specmatic().with_project_root(ROOT_DIR).with_mock(
-    MOCK_HOST,
-    MOCK_PORT,
-    expectation_json_files,
-).test_with_api_coverage_for_flask_app(
-    TestContract, FLASK_APP, APP_HOST, APP_PORT
-).run()
+(
+    Specmatic(PROJECT_ROOT)
+    .with_mock()
+    .test_with_api_coverage_for_flask_app(TestContract, FLASK_APP)
+    .run()
+)
 
 app_server.stop()
 

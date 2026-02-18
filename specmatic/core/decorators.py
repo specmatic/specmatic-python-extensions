@@ -11,8 +11,11 @@ from specmatic.servers.wsgi_app_server import WSGIAppServer
 from specmatic.utils import get_junit_report_file_path
 
 
-def specmatic_mock(host: str = '127.0.0.1', port: int = 0, project_root: str = '', expectations=None,
-                   specmatic_config_file_path: str = ''):
+def specmatic_mock(host: str | None = None,
+                   port: int | None = None,
+                   project_root: str | None = None,
+                   expectations=None,
+                   specmatic_config_file_path: str | None = None):
     def decorator(cls):
         try:
             cls.mock = SpecmaticMock(host, port, project_root, specmatic_config_file_path)
@@ -29,9 +32,13 @@ def specmatic_mock(host: str = '127.0.0.1', port: int = 0, project_root: str = '
     return decorator
 
 
-def specmatic_contract_test(host: str = '127.0.0,1', port: int = 0,
-                                              project_root: str = '',
-                                              specmatic_config_file_path: str = '', args=None, appRouteAdapter: AppRouteAdapter=None,):
+def specmatic_contract_test(
+        host: str | None = None,
+        port: int | None = None,
+        project_root: str | None = None,
+        specmatic_config_file_path: str | None = None,
+        args=None,
+        appRouteAdapter: AppRouteAdapter = None):
     def decorator(cls):
         try:
             test_host = host
