@@ -51,26 +51,27 @@ class TestContract:
     pass
 
 
-Specmatic()
-    .with_project_root(PROJECT_ROOT)
-    .with_mock(mock_host, mock_port, [expectation_json_file])
+(
+    Specmatic(PROJECT_ROOT)
+    .with_mock()
     .with_wsgi_app(app, app_host, app_port)
     .test(TestContract)
     .run()
+)
 
 if __name__ == '__main__':
     pytest.main()
 `````` 
 
 - In this, we are passing:
+  - The root directory of our project as an argument to the Specmatic constructor. 
+    This is required because specmatic needs to be able to find the specmatic config file, examples etc in your project directory to start the mock and run tests.
   - an instance of your wsgi app like flask 
   - app_host and app_port. If they are not specified, the app will be started on a random available port on 127.0.0.1.
   - You would need a [specmatic config](https://specmatic.io/documentation/specmatic_json.html) file to be present in the root directory of your project.
   - an empty test class.
-  - mock_host, mock_port, optional list of json files to set expectations on the mock.  
-    The mock_host, mock_port will be used to run the specmatic mock server.   
-    If they are not supplied, the mock will be started on a random available port on 127.0.0.1.    
-    [Click here](https://specmatic.io/documentation/service_virtualization_tutorial.html) to learn more about mocking/service virtualization.
+    The mock will be started based on the run options configured in specmatic.yaml.   
+    [Click here](https://docs.specmatic.io/contract_driven_development/service_virtualization) to learn more about mocking/service virtualization.
 -  You can run this test from either your IDE or command line by pointing pytest to your test folder:
    ``````pytest test -v -s``````  
 - NOTE: Please ensure that you set the '-v' and '-s' flags while running pytest as otherwise pytest may swallow up the console output.
@@ -81,12 +82,14 @@ if __name__ == '__main__':
 ``````python
 class TestContract:
     pass
-    
-Specmatic() \
-    .with_project_root(PROJECT_ROOT) \
-    .with_wsgi_app(app, app_host, app_port) \
-    .test(TestContract) \
+
+
+(
+    Specmatic(PROJECT_ROOT)
+    .with_wsgi_app(app, app_host, app_port)
+    .test(TestContract)
     .run()
+)
 ``````                        
 
 ## ASGI Apps
@@ -99,28 +102,13 @@ class TestContract:
     pass
 
 
-Specmatic()
-    .with_project_root(PROJECT_ROOT)
-    .with_mock(mock_host, mock_port, [expectation_json_file])
+(
+    Specmatic(PROJECT_ROOT)
+    .with_mock()
     .with_asgi_app('main:app', app_host, app_port)
     .test(TestContract)
-    .run()
-``````
-
-### Passing extra arguments to mock/test
-- To pass arguments like '--strict', '--testBaseUrl', pass them as a list to the 'args' parameter:
-
-``````python
-class TestContract:
-    pass
-
-
-Specmatic()
-    .with_project_root(PROJECT_ROOT)
-    .with_mock(mock_host, mock_port, [expectation_json_file], ['--strict'])
-    .with_wsgi_app(app, port=app_port)
-    .test(TestContract, args=['--testBaseURL=http://localhost:5000'])
-    .run()
+    .run() 
+)
 ``````
 
 ## Coverage
@@ -133,12 +121,13 @@ class TestContract:
     pass
 
 
-Specmatic()
-    .with_project_root(PROJECT_ROOT)
-    .with_mock(mock_host, mock_port, [expectation_json_file])
+(
+    Specmatic(PROJECT_ROOT)
+    .with_mock()
     .with_wsgi_app(app, app_host, app_port)
     .test_with_api_coverage_for_flask_app(TestContract, app)
     .run()
+)
 ``````
 
 ### Enabling api coverage for Sanic apps
@@ -148,12 +137,13 @@ class TestContract:
     pass
 
 
-Specmatic()
-    .with_project_root(PROJECT_ROOT)
-    .with_mock(mock_host, mock_port, [expectation_json_file])
+(
+    Specmatic(PROJECT_ROOT)
+    .with_mock()
     .with_asgi_app('main:app', app_host, app_port)
     .test_with_api_coverage_for_sanic_app(TestContract, app)
     .run()
+)
 ``````
 
 ### Enabling api coverage for FastApi apps
@@ -163,12 +153,13 @@ class TestContract:
     pass
 
 
-Specmatic()
-    .with_project_root(PROJECT_ROOT)
-    .with_mock(mock_host, mock_port, [expectation_json_file])
+(
+    Specmatic(PROJECT_ROOT)
+    .with_mock()
     .with_asgi_app('main:app', app_host, app_port)
     .test_with_api_coverage_for_fastapi_app(TestContract, app)
     .run()
+)
 ``````
 
 ### Enabling api coverage for any other type of app
@@ -181,12 +172,13 @@ The ``````CoverageRoute`````` class has two properties:
 You can then enable coverage by passing your adapter like this:
 
 ``````python
-Specmatic()
-    .with_project_root(PROJECT_ROOT)
-    .with_mock(mock_host, mock_port, [expectation_json_file])
+(
+    Specmatic(PROJECT_ROOT)
+    .with_mock()
     .with_asgi_app('main:app', app_host, app_port)
     .test_with_api_coverage(TestContract, MyAppRouteAdapter(app))
     .run()
+)
 ``````
 
 ### Enabling api coverage by setting the EndPointsApi property
@@ -214,12 +206,13 @@ class TestContract:
     pass
 
 
-Specmatic()
-    .with_project_root(PROJECT_ROOT)
-    .with_mock(mock_host, mock_port, [expectation_json_file])
+(
+    Specmatic(PROJECT_ROOT)
+    .with_mock()
     .with_endpoints_api(coverage_server.endpoints_api)
     .test(TestContract, app_host, app_port)
     .run()
+)
 
 app_server.stop()
 coverage_server.stop()
