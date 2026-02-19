@@ -30,7 +30,8 @@ class SpecmaticTest(SpecmaticBase):
         cmd = self.create_command_array('test', get_junit_report_dir_path())
         print("command array:")
         print(cmd)
-        print(f"\n Running specmatic tests for api at {self.host}:{self.port}")
+        if self.host is not None and self.port is not None:
+            print(f"\nRunning Specmatic tests using explicitly provided host and port as cli arguments -> {self.host}:{self.port}")
         if self.project_root is not None:
             subprocess.run(cmd, cwd=self.project_root)
         else:
