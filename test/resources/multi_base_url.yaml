@@ -1,8 +1,26 @@
-version: 2
-contracts:
-  - git:
-      url: "https://github.com/specmatic/specmatic-order-contracts.git"
-    consumes:
-      - baseUrl: http://localhost:9002/api
-        specs:
-          - "io/specmatic/examples/store/openapi/api_order_v3.yaml"
+version: 3
+dependencies:
+  services:
+    - service:
+        $ref: "#/components/services/orderApiService"
+        runOptions:
+          $ref: "#/components/runOptions/orderApiServiceMock"
+components:
+  sources:
+    specmaticOrderContracts:
+      git:
+        url: https://github.com/specmatic/specmatic-order-contracts.git
+  services:
+    orderApiService:
+      description: Order API Service
+      definitions:
+        - definition:
+            source:
+              $ref: "#/components/sources/specmaticOrderContracts"
+            specs:
+              - io/specmatic/examples/store/openapi/api_order_v3.yaml
+  runOptions:
+    orderApiServiceMock:
+      openapi:
+        type: mock
+        baseUrl: http://localhost:9002/api

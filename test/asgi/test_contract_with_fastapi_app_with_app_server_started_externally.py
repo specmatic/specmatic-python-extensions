@@ -7,10 +7,7 @@ from test import (
     APP_PORT,
     FASTAPI_APP,
     FASTAPI_STR,
-    ROOT_DIR,
-    MOCK_HOST,
-    MOCK_PORT,
-    expectation_json_files,
+    PROJECT_ROOT,
 )
 
 app_server = ASGIAppServer(FASTAPI_STR, APP_HOST, APP_PORT)
@@ -21,13 +18,13 @@ class TestContract:
     pass
 
 
-Specmatic().with_project_root(ROOT_DIR).with_mock(
-    MOCK_HOST,
-    MOCK_PORT,
-    expectation_json_files,
-).test_with_api_coverage_for_fastapi_app(
-    TestContract, FASTAPI_APP, APP_HOST, APP_PORT
-).run()
+(
+    Specmatic(PROJECT_ROOT)
+    .with_mock()
+    .test_with_api_coverage_for_fastapi_app(TestContract, FASTAPI_APP)
+    .run()
+)
+
 app_server.stop()
 
 if __name__ == "__main__":

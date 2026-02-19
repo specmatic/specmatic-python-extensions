@@ -4,6 +4,7 @@ import subprocess
 import threading
 import traceback
 from queue import Queue
+from typing import Any
 from urllib.parse import urlparse
 
 import requests
@@ -13,8 +14,12 @@ from specmatic.core.specmatic_base import SpecmaticBase
 
 class SpecmaticMock(SpecmaticBase):
 
-    def __init__(self, host: str = '127.0.0.1', port: int = 0, project_root: str = '',
-                 specmatic_config_file_path: str = '', args=None):
+    def __init__(self,
+                 host: str | None = None,
+                 port: int | None = None,
+                 project_root: str | None = None,
+                 specmatic_config_file_path: str | None = None,
+                 args=None):
         super().__init__(host, port, project_root, specmatic_config_file_path, args)
         self.__mock_started_event = None
         self.__process = None
@@ -75,9 +80,16 @@ class SpecmaticMock(SpecmaticBase):
 
     def __start_specmatic_mock_in_subprocess(self):
         mock_command = self.__create_mock_process_command()
-        if self.host != '' and self.port != 0:
+        if self.host is not None and self.port is not None:
             print(f"\n Starting specmatic mock server on {self.host}:{self.port}")
-        self.__process = subprocess.Popen(mock_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+        popen_kwargs: dict[str, Any] = {
+            "stdout": subprocess.PIPE,
+            "stderr": subprocess.PIPE,
+        }
+        if self.project_root is not None:
+            popen_kwargs["cwd"] = self.project_root
+        self.__process = subprocess.Popen(mock_command, **popen_kwargs)
 
     def __start_reading_mock_output(self):
         stdout_reader = threading.Thread(target=self.__read_process_output, daemon=True)
@@ -95,12 +107,16 @@ class SpecmaticMock(SpecmaticBase):
 
     def __read_process_output(self):
         def signal_event_if_mock_has_started(line):
-            if self.__free_port_message in line and self.port == 0:
+            if self.__free_port_message in line and self.port is None:
                 self.port = line.split(self.__free_port_message + ":")[1].strip()
 
             if self.__mock_serving_message in line:
-                if self.port == 0:
-                    self.port = self._extract_port(line.split(self.__mock_serving_message)[0])
+                if self.port is None or self.host is None:
+                    host, port = self._extract_host_port(
+                        line.split(self.__mock_serving_message)[0]
+                    )
+                    self.host = host
+                    self.port = port
                 self.__mock_started_event.set()
 
         def read_and_print_output_line_by_line():
@@ -118,7 +134,7 @@ class SpecmaticMock(SpecmaticBase):
             self.__mock_started_event.set()
 
     @staticmethod
-    def _extract_port(text: str) -> str:
+    def _extract_host_port(text: str) -> tuple[str, str]:
         for token in text.split():
             try:
                 parsed = urlparse(token)
@@ -128,7 +144,7 @@ class SpecmaticMock(SpecmaticBase):
                 implicit_port = { "http": 80,"https": 443 }.get(parsed.scheme, None)
                 port = parsed.port if parsed.port not in (None, -1) else implicit_port
                 if port is not None:
-                    return str(port)
+                    return parsed.hostname, str(port)
             except ValueError:
                 continue
 
@@ -147,4 +163,4 @@ class SpecmaticMock(SpecmaticBase):
             self.__mock_started_event.set()
 
     def __create_mock_process_command(self):
-        return self.create_command_array('stub')
+        return self.create_command_array('mock')

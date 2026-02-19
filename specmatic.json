@@ -1,32 +1,99 @@
 {
-  "sources": [
-    {
-      "provider": "git",
-      "repository": "https://github.com/specmatic/specmatic-order-contracts.git",
-      "provides": [
-        "io/specmatic/examples/store/openapi/product_search_bff_v4.yaml"
-      ],
-      "consumes": [
-        "io/specmatic/examples/store/openapi/api_order_v3.yaml"
-      ]
-    }
-  ],
-  "report": {
-    "formatters": [
-      {
-        "type": "text",
-        "layout": "table"
+  "version": 3,
+  "systemUnderTest": {
+    "service": {
+      "$ref": "#/components/services/productSearchBffService",
+      "runOptions": {
+        "$ref": "#/components/runOptions/productSearchBffServiceTest"
       }
-    ],
-    "types": {
-      "APICoverage": {
-        "OpenAPI": {
-          "successCriteria": {
-            "minThresholdPercentage": 100,
-            "maxMissedEndpointsInSpec": 0,
-            "enforce": false
+    }
+  },
+  "dependencies": {
+    "services": [
+      {
+        "service": {
+          "$ref": "#/components/services/orderApiService",
+          "runOptions": {
+            "$ref": "#/components/runOptions/orderApiServiceMock"
           },
-          "excludedEndpoints": []
+          "data": {
+            "examples": [
+              {
+                "directories": [
+                  "./test/data"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "specmatic": {
+    "governance": {
+      "successCriteria": {
+        "minCoveragePercentage": 70,
+        "maxMissedOperationsInSpec": 4,
+        "enforce": true
+      }
+    },
+    "settings": {
+      "test": {
+        "schemaResiliencyTests": "all"
+      }
+    }
+  },
+  "components": {
+    "sources": {
+      "specmaticOrderContracts": {
+        "git": {
+          "url": "https://github.com/specmatic/specmatic-order-contracts.git"
+        }
+      }
+    },
+    "services": {
+      "productSearchBffService": {
+        "description": "Product Search BFF Service",
+        "definitions": [
+          {
+            "definition": {
+              "source": {
+                "$ref": "#/components/sources/specmaticOrderContracts"
+              },
+              "specs": [
+                "io/specmatic/examples/store/openapi/product_search_bff_v4.yaml"
+              ]
+            }
+          }
+        ]
+      },
+      "orderApiService": {
+        "description": "Order API Service",
+        "definitions": [
+          {
+            "definition": {
+              "source": {
+                "$ref": "#/components/sources/specmaticOrderContracts"
+              },
+              "specs": [
+                "io/specmatic/examples/store/openapi/api_order_v3.yaml"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "runOptions": {
+      "productSearchBffServiceTest": {
+        "openapi": {
+          "type": "test",
+          "baseUrl": "{APP_URL:http://localhost:5000}"
+        }
+      },
+      "orderApiServiceMock": {
+        "openapi": {
+          "type": "mock",
+          "baseUrl": "http://localhost:8080"
         }
       }
     }

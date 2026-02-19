@@ -2,8 +2,14 @@ import os
 
 
 class SpecmaticBase:
-    def __init__(self, host: str = '127.0.0.1', port: int = 0, project_root: str = '',
-                 specmatic_config_file_path: str = '', args=None, endpoints_api=""):
+    def __init__(self,
+                 host: str | None = None,
+                 port: int | None = None,
+                 project_root: str | None = None,
+                 specmatic_config_file_path: str | None = None,
+                 args=None,
+                 endpoints_api: str | None = None
+                 ):
         self.contract_file_paths = None
         self.project_root = project_root
         self.host = host
@@ -16,7 +22,7 @@ class SpecmaticBase:
         jar_path = os.path.dirname(os.path.realpath(__file__)) + "/specmatic.jar"
         cmd = ["java"]
 
-        if self.endpoints_api != "":
+        if self.endpoints_api is not None:
             print("Setting Endpoints API as: " + self.endpoints_api)
             cmd.append("-DendpointsAPI=" + self.endpoints_api)
 
@@ -25,11 +31,12 @@ class SpecmaticBase:
         cmd.append(jar_path)
         cmd.append(mode)
 
-        if self.specmatic_config_file_path != '':
+        if self.specmatic_config_file_path is not None:
             cmd.append("--config=" + self.specmatic_config_file_path)
 
-        cmd += ['--host=' + self.host]
-        if self.port != 0:
+        if self.host is not None:
+            cmd += ['--host=' + self.host]
+        if self.port is not None:
             cmd += ["--port=" + str(self.port)]
         if junit_dir_path != '':
             cmd += ["--junitReportDir=" + junit_dir_path]

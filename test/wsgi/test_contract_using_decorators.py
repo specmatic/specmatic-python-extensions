@@ -9,7 +9,7 @@ from test import (
     APP_HOST,
     APP_PORT,
     FLASK_APP,
-    ROOT_DIR,
+    PROJECT_ROOT,
     MOCK_HOST,
     MOCK_PORT,
     expectation_json_files,
@@ -17,9 +17,9 @@ from test import (
 
 
 # NOTE: Type Hint AppRouteAdapter in specmatic_contract_test decorator should be AppRouteAdapter | None
-@specmatic_contract_test(APP_HOST, APP_PORT, ROOT_DIR)  # type: ignore[reportArgumentType]
+@specmatic_contract_test(project_root=PROJECT_ROOT)  # type: ignore[reportArgumentType]
 @start_wsgi_app(FLASK_APP, APP_HOST, APP_PORT)
-@specmatic_mock(MOCK_HOST, MOCK_PORT, ROOT_DIR, expectation_json_files)
+@specmatic_mock(project_root=PROJECT_ROOT)
 class TestApiContract:
     pass
 

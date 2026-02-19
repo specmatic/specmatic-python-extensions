@@ -3,12 +3,11 @@ import os
 import pytest
 from specmatic.generators.pytest_generator import PyTestGenerator
 from specmatic.generators.unittest_generator import UnitTestGenerator
+from test import RESOURCE_DIR
 
 
 class TestReportGeneration:
-    junit_report_path = os.path.join(
-        os.path.dirname(__file__), "..", "data", "TEST-junit-jupiter.xml"
-    )
+    junit_report_path = RESOURCE_DIR / "TEST-junit-jupiter.xml"
 
     def test_report_count_pytest(self):
         generator = PyTestGenerator(self, self.junit_report_path)

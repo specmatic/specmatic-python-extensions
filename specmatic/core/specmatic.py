@@ -16,7 +16,7 @@ from specmatic.utils import get_junit_report_file_path
 
 
 class Specmatic:
-    def __init__(self):
+    def __init__(self, project_root: str | None = None):
         self.app = None
         self.app_module = ''
         self.app_host = '127.0.0.1'
@@ -36,7 +36,7 @@ class Specmatic:
         self.test_port = None
         self.test_args = None
 
-        self.project_root = ''
+        self.project_root = project_root
         self.specmatic_config_file_path = ''
 
         self.run_mock = False
@@ -44,7 +44,7 @@ class Specmatic:
         self.run_tests = False
 
         self.coverage_server = None
-        self.endpoints_api = ""
+        self.endpoints_api = None
 
     def with_project_root(self, project_root):
         self.project_root = project_root
@@ -54,7 +54,7 @@ class Specmatic:
         self.specmatic_config_file_path = specmatic_config_file_path
         return self
 
-    def with_mock(self, mock_host: str = '127.0.0.1', mock_port: int = 0, expectations=None, args=None):
+    def with_mock(self, mock_host: str | None = None, mock_port: int | None = None, expectations=None, args=None):
         self.mock_host = mock_host
         self.mock_port = mock_port
         self.run_mock = True
@@ -87,34 +87,34 @@ class Specmatic:
         self.run_app = True
         return self
 
-    def with_endpoints_api(self, endpoints_api):
+    def with_endpoints_api(self, endpoints_api: str | None):
         self.endpoints_api = endpoints_api
         return self
 
-    def test(self, test_class, test_host: str = '127.0.0.1', test_port: int = 0, args=None):
+    def test(self, test_class, test_host: str | None = None, test_port: int | None = None, args=None):
         self.__setup_test_configuration(test_class, None, test_host, test_port, args)
         return self
 
-    def test_with_api_coverage_for_flask_app(self, test_class, app, test_host: str = '127.0.0.1',
-                                             test_port: int = 0, args=None):
+    def test_with_api_coverage_for_flask_app(self, test_class, app, test_host: str | None = None,
+                                             test_port: int | None = None, args=None):
         return self.__setup_test_configuration(test_class, FlaskAppCoverageServer(app), test_host, test_port, args)
 
-    def test_with_api_coverage_for_sanic_app(self, test_class, app, test_host: str = '127.0.0.1',
-                                             test_port: int = 0, args=None):
+    def test_with_api_coverage_for_sanic_app(self, test_class, app, test_host: str | None = None,
+                                             test_port: int | None = None, args=None):
         return self.__setup_test_configuration(test_class, SanicAppCoverageServer(app), test_host, test_port, args)
 
-    def test_with_api_coverage_for_fastapi_app(self, test_class, app, test_host: str = '127.0.0.1',
-                                               test_port: int = 0, args=None):
+    def test_with_api_coverage_for_fastapi_app(self, test_class, app, test_host: str | None = None,
+                                               test_port: int | None = None, args=None):
         return self.__setup_test_configuration(test_class, FastApiAppCoverageServer(app), test_host, test_port, args)
 
-    def test_with_api_coverage(self, test_class, app_route_adapter: AppRouteAdapter, test_host: str = '127.0.0.1',
-                               test_port: int = 0, args=None):
+    def test_with_api_coverage(self, test_class, app_route_adapter: AppRouteAdapter, test_host: str | None = None,
+                               test_port: int | None = None, args=None):
         self.__setup_test_configuration(test_class, CoverageServer(app_route_adapter), test_host, test_port, args)
         return self
 
     def __setup_test_configuration(self, test_class, coverage_server: CoverageServer = None,
-                                   test_host: str = '127.0.0.1',
-                                   test_port: int = 0, args=None):
+                                   test_host: str | None = None,
+                                   test_port: int | None = None, args=None):
         self.test_class = test_class
         self.test_host = test_host
         self.test_port = test_port
@@ -151,7 +151,7 @@ class Specmatic:
                 self.test_host = self.app_server.host
                 self.test_port = self.app_server.port
 
-            if self.endpoints_api == "":
+            if self.endpoints_api is None:
                 if self.coverage_server is not None:
                     self.coverage_server.start()
                     self.endpoints_api = self.coverage_server.endpoints_api

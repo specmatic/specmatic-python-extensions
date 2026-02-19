@@ -49,8 +49,9 @@ components:
     productSearchBffServiceTest:
       openapi:
         type: test
-        baseUrl: "{APP_URL:http://localhost:5000}"
+        host: localhost
     orderApiServiceMock:
       openapi:
         type: mock
-        baseUrl: http://localhost:8080
+        host: localhost
+

@@ -1,3 +1,4 @@
+import os
 import pathlib
 
 from test.apps.fast_api import app as FASTAPI_APP
@@ -7,11 +8,13 @@ from test.utils import download_specmatic_jar_if_does_not_exist
 
 download_specmatic_jar_if_does_not_exist()
 
-ROOT_DIR = str(pathlib.Path.cwd().absolute())
-RESOURCE_DIR = pathlib.Path.cwd() / "test" / "resources"
+PROJECT_ROOT_PATH = pathlib.Path(__file__).resolve().parent.parent
+
+PROJECT_ROOT = str(PROJECT_ROOT_PATH)
+RESOURCE_DIR = PROJECT_ROOT_PATH / "test" / "resources"
 
 expectation_json_files = []
-for file in pathlib.Path(ROOT_DIR, "test/data").iterdir():
+for file in pathlib.Path(PROJECT_ROOT, "test/data").iterdir():
     if (
         file.is_file()
         and file.suffix == ".json"
