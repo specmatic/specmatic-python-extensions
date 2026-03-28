@@ -27,7 +27,7 @@ setup(
     include_package_data=True,
     install_requires=[
         'pytest>=7.3.1',
-        'requests>=2.32.4',
+        'requests>=2.33.0',
         'Werkzeug>=3.1.4',
         'uvicorn>=0.18.0',
         'fastapi>=0.70.0',
