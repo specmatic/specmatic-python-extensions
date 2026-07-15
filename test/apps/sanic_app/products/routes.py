@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING
 
 from sanic import Blueprint, json
+from sanic.exceptions import SanicException
 from sanic.exceptions import ServiceUnavailable
 
 from ..products.models import Product
@@ -26,6 +27,8 @@ async def find_available_products(request: "Request"):
 
 @products.route("/products", methods=["POST"])
 async def add_product(request: "Request"):
+    if request.headers.get("content-type", "").split(";", 1)[0].strip() != "application/json":
+        raise SanicException("Unsupported Media Type", status_code=415)
     data: Product = Product.load(request.json)
     product = ProductService.create_product(data)
     return json({"id": product["id"]}, status=201)

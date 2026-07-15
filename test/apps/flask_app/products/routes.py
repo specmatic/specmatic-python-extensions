@@ -20,6 +20,8 @@ def find_available_products():
 
 @products.route("/products", methods=["POST"])
 def add_product():
+    if request.content_type != "application/json":
+        abort(415, "Unsupported Media Type")
     data: Product = Product.load(request.json)
     product = ProductService.create_product(data)
     return jsonify(id=product["id"]), 201
