@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Header, HTTPException
+from fastapi import APIRouter, Header, HTTPException, Request
 from fastapi.responses import JSONResponse
 
 from ..schemas import Product, ProductType
@@ -23,6 +23,8 @@ async def find_available_products(
 
 
 @products.post("/products", status_code=201)
-async def add_product(data: Product) -> dict[str, int]:
+async def add_product(request: Request, data: Product) -> dict[str, int]:
+    if request.headers.get("content-type", "").split(";")[0].strip() != "application/json":
+        raise HTTPException(status_code=415, detail="Unsupported Media Type")
     product = await ProductService.create_product(data)
     return {"id": product["id"]}
