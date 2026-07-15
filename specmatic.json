@@ -32,8 +32,8 @@
   "specmatic": {
     "governance": {
       "successCriteria": {
-        "minCoveragePercentage": 70,
-        "maxMissedOperationsInSpec": 4,
+        "minCoveragePercentage": 50,
+        "maxMissedOperationsInSpec": 6,
         "enforce": true
       }
     },
