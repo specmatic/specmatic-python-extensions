@@ -31,7 +31,7 @@ setup(
         'Werkzeug>=3.1.4',
         'uvicorn>=0.18.0',
         'fastapi>=0.70.0',
-        'flask>=2.2.5',
+        'flask>=3.1.3',
         'sanic>=22.12.0'
     ]
 )
