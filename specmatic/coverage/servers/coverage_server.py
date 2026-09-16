@@ -20,6 +20,8 @@ class CoverageServer:
         self.endpoints_api = f"{coverage_server_url}/actuator/mappings"
 
     def stop(self):
+        if self.app_server is None:
+            return
         print("\nStopping coverage server...")
         self.app_server.stop()
 
