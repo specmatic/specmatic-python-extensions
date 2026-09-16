@@ -19,24 +19,26 @@ from test import (
 app_server = ASGIAppServer(FASTAPI_STR, APP_HOST, APP_PORT)
 coverage_server = FastApiAppCoverageServer(FASTAPI_APP)
 
-app_server.start()
-coverage_server.start()
-
 
 class TestContract:
     pass
 
 
-(
-    Specmatic(PROJECT_ROOT)
-    .with_mock()
-    .with_endpoints_api(coverage_server.endpoints_api)
-    .test(TestContract)
-    .run()
-)
-
-app_server.stop()
-coverage_server.stop()
+app_server.start()
+try:
+    coverage_server.start()
+    try:
+        (
+            Specmatic(PROJECT_ROOT)
+            .with_mock()
+            .with_endpoints_api(coverage_server.endpoints_api)
+            .test(TestContract)
+            .run()
+        )
+    finally:
+        coverage_server.stop()
+finally:
+    app_server.stop()
 
 if __name__ == "__main__":
     pytest.main()
