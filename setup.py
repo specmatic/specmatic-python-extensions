@@ -26,7 +26,7 @@ setup(
     packages=find_packages(exclude=['test', 'test.*']),
     include_package_data=True,
     install_requires=[
-        'pytest>=7.3.1',
+        'pytest>=9.0.3',
         'requests>=2.32.4',
         'Werkzeug>=3.1.4',
         'uvicorn>=0.18.0',
